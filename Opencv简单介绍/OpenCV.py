@@ -17,6 +17,25 @@ def Turn_on_the_camera():
     cv2.destroyAllWindows()  # 用来删除窗口的，关闭窗口并取消分配任何相关的内存使用
 
 
+def cat_photo(path):
+    cap = cv2.VideoCapture(0)
+    num = 1
+    while cap.isOpened():
+        _, frame = cap.read()
+        cv2.imshow("capture", frame)
+        key = cv2.waitKey(1)  # 等待一会 单位为毫秒，表示间隔时间
+        if key == ord('c'):
+            img_name = f'{path}/{num}.jpg'
+            cv2.imwrite(img_name, frame)
+            print(f"已拍摄{num}张图片")
+            num += 1
+        if key == ord('q'):  # 按q键退出
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+
 def Open_image():
     # 载入图像
     img = cv2.imread(r"./car.jpg")
@@ -79,8 +98,9 @@ def save_vedio():
 
 if __name__ == "__main__":
     # Turn_on_the_camera()
+    cat_photo(r"./photo")
     # Open_image()
     # show_image()
     # cvt_color()
     # save_image()
-    save_vedio()
+    # save_vedio()
