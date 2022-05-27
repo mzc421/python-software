@@ -1,4 +1,6 @@
 # python-software
 使用python实现的一些小功能
 
-XML-display：对XML进行了简单介绍，并且用来Python进行解析的数据对图片对齐进行标注，这个主要是用于对图片进行人工标注时产生的XML文件
+Opencv简单介绍    ----》    使用opencv对图像进行简单的处理    
+XML解析    ----》    对含有xml的标注文件，将其显示在原图上    
+pygame-接球游戏    ----》    使用python库的pygame来实现接球游戏    
