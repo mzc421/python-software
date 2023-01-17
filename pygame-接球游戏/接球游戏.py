@@ -57,7 +57,8 @@ while True:
             elif event.key == pygame.K_RIGHT:  # 挡板右移
                 if board_rect.right >= 186 and board_rect.right < w:
                     board_rect.right += board_x
-                elif board_rect.right >= w:  # 判断挡板右边的坐标是否大于屏幕的宽度                        board_rect.right = w
+                elif board_rect.right >= w:  # 判断挡板右边的坐标是否大于屏幕的宽度                        
+                    board_rect.right = w
                     board_rect.bottom += board_y
 
         #鼠标控制挡板
